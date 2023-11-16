@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:flutter_state_management/newsComponent/model/current_weather.dart';
+import 'package:flutter_state_management/weatherComponent/model/current_weather.dart';
 import 'package:http/http.dart' as http;
 
 class WeatherService {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_state_management/newsComponent/viewModel/weather_viewmodel.dart';
-import 'package:flutter_state_management/newsComponent/views/current_weather_view.dart';
+import 'package:flutter_state_management/searchComponent/views/search_view.dart';
+import 'package:flutter_state_management/weatherComponent/viewModel/weather_viewmodel.dart';
+import 'package:flutter_state_management/weatherComponent/views/current_weather_view.dart';
 
 class Navigation extends ConsumerWidget {
   const Navigation({super.key});
@@ -14,6 +15,20 @@ class Navigation extends ConsumerWidget {
         surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.transparent,
         title: const Text("Current Weather"),
+        actions: [
+          IconButton(
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SearchScaffold(),
+              ),
+            ),
+            icon: const Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+          ),
+        ],
       ),
       body: Stack(
         alignment: Alignment.center,

@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_state_management/newsComponent/model/current_weather.dart';
-import 'package:flutter_state_management/newsComponent/service/weather_service.dart';
+import 'package:flutter_state_management/weatherComponent/model/current_weather.dart';
+import 'package:flutter_state_management/weatherComponent/service/weather_service.dart';
 import 'package:rxdart/rxdart.dart';
 
 final weatherViewModel = Provider((ref) => WeatherViewModel());

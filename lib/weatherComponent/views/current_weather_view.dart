@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_state_management/newsComponent/model/current_weather.dart';
-import 'package:flutter_state_management/newsComponent/viewModel/weather_viewmodel.dart';
+import 'package:flutter_state_management/weatherComponent/model/current_weather.dart';
+import 'package:flutter_state_management/weatherComponent/viewModel/weather_viewmodel.dart';
 
 class CurrentWeatherView extends ConsumerStatefulWidget {
   const CurrentWeatherView({super.key});
@@ -52,6 +52,7 @@ class _CurrentWeatherViewState extends ConsumerState<CurrentWeatherView> {
   ) {
     return Column(
       children: [
+        const Spacer(),
         Text(
           currentWeather.name,
           style: Theme.of(context).textTheme.headlineLarge,
@@ -64,6 +65,7 @@ class _CurrentWeatherViewState extends ConsumerState<CurrentWeatherView> {
           "Feels like: ${currentWeather.main.feelsLike.toString()} °C",
           style: Theme.of(context).textTheme.titleLarge,
         ),
+        const Spacer(),
         Row(
           children: [
             _infoItem(
@@ -99,12 +101,17 @@ class _CurrentWeatherViewState extends ConsumerState<CurrentWeatherView> {
             ),
           ],
         ),
+        const Spacer(),
       ],
     );
   }
 
   Widget _infoItem(
-      IconData icon, String data, String unit, BuildContext context) {
+    IconData icon,
+    String data,
+    String unit,
+    BuildContext context,
+  ) {
     return Expanded(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
