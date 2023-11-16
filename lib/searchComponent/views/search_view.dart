@@ -37,16 +37,11 @@ class SearchScaffold extends StatelessWidget {
   }
 }
 
-class SearchView extends ConsumerStatefulWidget {
+class SearchView extends ConsumerWidget {
   const SearchView({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _SearchViewState();
-}
-
-class _SearchViewState extends ConsumerState<SearchView> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
         Padding(
